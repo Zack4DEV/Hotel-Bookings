@@ -1,0 +1,62 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ 'origin' ,'upstream' ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    name: Build and Deploy Web
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇ Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: nanasess/setup-php@v4.0.2
+        with:
+          php-version: 8.2
+          
+      - name: ⚙ Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: |
+             composer update --lock --no-interaction --with-all-dependencies
+
+      - name: 📦 Install dependencies
+        run: npm install --force
+
+      - name: 🌐 Build Expo Web
+        run: npm run dev && php artisan serve
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+          token: ${{ github.token }}
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: 🚀 Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4.0.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: 'gh-pages'
+          publish_dir: './dist'
+          keep_files: true
+          user_name: "Zack4DEV"
+          user_email: "73597675+Zack4DEV@users.noreply.github.com"
+          commit_message: "gh-pages - ${{ github.repository }}"

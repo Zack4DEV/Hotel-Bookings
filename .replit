@@ -1,27 +1,20 @@
-run = "npm run dev | php artisan serve -vvv"
+run = "npm run dev && php artisan serve"
 modules = ["nodejs-20:v8-20230920-bd784b9"]
 
 [nix]
-channel = "stable-22_11"
+channel = "unstable"
 
 [deployment]
-run = ["sh", "-c", "npm run dev | php artisan serve -vvv"]
+run = ["sh", "-c", "npm run dev && php artisan serve"]
 deploymentTarget = "cloudrun"
 
-[[ports]]
-localPort = 5173
-externalPort = 5173
-
-[[ports]]
-localPort = 8000
-externalPort = 80
-exposeLocalhost = true
-
-[[ports]]
-localPort = 8001
-externalPort = 3000
-exposeLocalhost = true
 
 [auth]
 pageEnabled = false
 buttonEnabled = false
+
+[[ports]]
+localPort = 4040
+externalPort = 8081
+exposeLocalhost = true
+

@@ -1,0 +1,52 @@
+[2025-05-07 17:32:45] .ERROR: file_get_contents(/home/user/Hotel-Bookings/.env): Failed to open stream: No such file or directory {"exception":"[object] (ErrorException(code: 0): file_get_contents(/home/user/Hotel-Bookings/.env): Failed to open stream: No such file or directory at /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php:100)
+[stacktrace]
+#0 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(256): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'file_get_conten...', '/home/user/Hote...', 100)
+#1 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->{closure:Illuminate\\Foundation\\Bootstrap\\HandleExceptions::forwardsTo():255}(2, 'file_get_conten...', '/home/user/Hote...', 100)
+#2 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php(100): file_get_contents('/home/user/Hote...')
+#3 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php(82): Illuminate\\Foundation\\Console\\KeyGenerateCommand->writeNewEnvironmentFileWith('base64:tcs7NH3v...')
+#4 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php(47): Illuminate\\Foundation\\Console\\KeyGenerateCommand->setKeyInEnvironmentFile('base64:tcs7NH3v...')
+#5 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Console\\KeyGenerateCommand->handle()
+#6 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#7 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#8 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#9 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Container/Container.php(696): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#10 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate\\Container\\Container->call(Array)
+#11 /home/user/Hotel-Bookings/vendor/symfony/console/Command/Command.php(279): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#12 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#13 /home/user/Hotel-Bookings/vendor/symfony/console/Application.php(1094): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /home/user/Hotel-Bookings/vendor/symfony/console/Application.php(342): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\KeyGenerateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 /home/user/Hotel-Bookings/vendor/symfony/console/Application.php(193): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 /home/user/Hotel-Bookings/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 {main}
+"} 
+[2025-05-07 17:32:54] .ERROR: file_get_contents(/home/user/Hotel-Bookings/.env): Failed to open stream: No such file or directory {"exception":"[object] (ErrorException(code: 0): file_get_contents(/home/user/Hotel-Bookings/.env): Failed to open stream: No such file or directory at /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php:100)
+[stacktrace]
+#0 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(256): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'file_get_conten...', '/home/user/Hote...', 100)
+#1 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->{closure:Illuminate\\Foundation\\Bootstrap\\HandleExceptions::forwardsTo():255}(2, 'file_get_conten...', '/home/user/Hote...', 100)
+#2 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php(100): file_get_contents('/home/user/Hote...')
+#3 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php(82): Illuminate\\Foundation\\Console\\KeyGenerateCommand->writeNewEnvironmentFileWith('base64:YE9Po4t9...')
+#4 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Foundation/Console/KeyGenerateCommand.php(47): Illuminate\\Foundation\\Console\\KeyGenerateCommand->setKeyInEnvironmentFile('base64:YE9Po4t9...')
+#5 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Foundation\\Console\\KeyGenerateCommand->handle()
+#6 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#7 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#8 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#9 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Container/Container.php(696): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#10 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate\\Container\\Container->call(Array)
+#11 /home/user/Hotel-Bookings/vendor/symfony/console/Command/Command.php(279): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#12 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#13 /home/user/Hotel-Bookings/vendor/symfony/console/Application.php(1094): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 /home/user/Hotel-Bookings/vendor/symfony/console/Application.php(342): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\KeyGenerateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 /home/user/Hotel-Bookings/vendor/symfony/console/Application.php(193): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 /home/user/Hotel-Bookings/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 {main}
+"} 
+[2025-05-07 17:33:47] staging.ERROR: Command "dump-autoload" is not defined. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"dump-autoload\" is not defined. at /home/user/Hotel-Bookings/vendor/symfony/console/Application.php:726)
+[stacktrace]
+#0 /home/user/Hotel-Bookings/vendor/symfony/console/Application.php(284): Symfony\\Component\\Console\\Application->find('dump-autoload')
+#1 /home/user/Hotel-Bookings/vendor/symfony/console/Application.php(193): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 /home/user/Hotel-Bookings/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 /home/user/Hotel-Bookings/artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 {main}
+"} 

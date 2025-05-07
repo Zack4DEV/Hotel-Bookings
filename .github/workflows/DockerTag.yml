@@ -1,0 +1,54 @@
+name: Docker Tag
+
+on:
+  push:
+    branches: ['origin' ,'upstream']
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+      push-store-image:
+        runs-on: ubuntu-latest
+        permissions:
+          contents: read
+          packages: write
+        defaults:
+          run:
+            working-directory: '.'
+        steps:
+          - name: 'Checkout GitHub Action'
+            uses: actions/checkout@v4
+
+          - name: Log in to the Container registry
+            uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567
+            with:
+              registry: ${{ env.REGISTRY }}
+              username: ${{ github.actor }}
+              password: ${{ secrets.GITHUB_TOKEN }}
+
+          - name: Extract metadata (tags, labels) for Docker
+            id: meta
+            uses: docker/metadata-action@8e5442c4ef9f78752691e2d8f8d19755c6f78e81
+            with:
+              images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+              tags: |
+                  type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'main') }}
+                  type=sha,format=long
+                  type=ref,event=tag
+
+          - name: Build and push Docker image
+            id: push
+            uses: docker/build-push-action@5cd11c3a4ced054e52742c5fd54dca954e0edd85
+            with:
+              context: .
+              push: true
+              file: docker/8.0/Dockerfile
+              tags: ${{ steps.meta.outputs.tags }}
+              labels: ${{ steps.meta.outputs.labels }}
+              registry: remote
+              username: ${{ github.author }}
+              password: ${{ secrets.GITHUB_TOKEN }}
+              platforms: linux/amd64

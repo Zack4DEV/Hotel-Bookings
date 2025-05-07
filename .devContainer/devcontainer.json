@@ -1,0 +1,37 @@
+{
+    "name": "Node.js & JavaScript",
+    "image": "mcr.microsoft.com/devcontainers/javascript-node:0-23",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        "ghcr.io/devcontainers/features/azure-cli:1": {}
+    },
+    "postCreateCommand": "npm install -g @devcontainers/cli",
+    "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "README.md"
+      ]
+    },
+    "vscode": {
+      "settings": {},
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "mads-hartmann.bash-ide-vscode",
+        "dbaeumer.vscode-eslint",
+        "EditorConfig.EditorConfig"
+      ]
+    },
+    "postAttachCommand": {
+    "server": "npm run dev && php artisan serve"
+  },
+  "portsAttributes": {
+    "8081": {
+      "label": "Application",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "forwardPorts": [
+    8081
+  ]
+  }
+}

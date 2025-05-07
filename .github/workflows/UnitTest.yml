@@ -1,7 +1,7 @@
 name: PHPUnit Test 
 on:
   push:
-    branches: ['origin']
+    branches: ['upstream' ,'origin']
   pull_request:
   schedule:
     - cron: '0 0 * * *'
