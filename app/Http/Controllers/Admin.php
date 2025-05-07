@@ -1,16 +1,1 @@
-<?php
-
-namespace App\Http\Controllers;
-
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
-
-class Admin extends Controller{
-
-public function _show()
-    {
-        return view('Admin/Dashboard');
-    }
-
-
-}
+<?php namespace App\Http\Controllers; use Illuminate\Http\Request; use App\Models\Booking; use App\Models\Room; use App\Models\Staff; class Admin extends Controller { public function _show() { $stats = [ 'total_bookings' => Booking::count(), 'available_rooms' => Room::where('status', 'available')->count(), 'total_staff' => Staff::count(), 'revenue' => Booking::sum('total_amount'), 'recent_bookings' => Booking::with('user', 'room') ->latest() ->take(5) ->get() ]; return response()->json($stats); } } 
